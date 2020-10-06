@@ -36,7 +36,7 @@ $.fn.puissance4 = function (x, y) {
         for (let i = 0; i < map.length; i++) {
             rangee = "";
             for (let j = 0; j < map[i].length; j++) {
-                rangee = rangee + '<img draggable="false" class="case" src="public/images/vide.png" x="' + j + '" y="' + i + '" function="play">';
+                rangee = rangee + '<img draggable="false" class="case" src="cet1bot.app/public/images/vide.png" x="' + j + '" y="' + i + '" function="play">';
             }
             balises = '<div class="rangee">' + rangee + '</div>' + balises;
         }
@@ -133,10 +133,10 @@ $.fn.puissance4 = function (x, y) {
     let animation = function () {
         open = false;
         if (i < y - 1) {
-            $("img[x='" + play_x + "'][y='" + (i + 1) + "']").attr("src", "public/images/vide.png")
+            $("img[x='" + play_x + "'][y='" + (i + 1) + "']").attr("src", "cet1bot.app/public/images/vide.png")
         }
         if (player == 1) {
-            $("img[x='" + play_x + "'][y='" + i + "']").attr("src", "public/images/Jeton" + playerOne + ".png")
+            $("img[x='" + play_x + "'][y='" + i + "']").attr("src", "cet1bot.app/public/images/Jeton" + playerOne + ".png")
             if (i == play_y) {
                 player = 2;
                 clearInterval(descente);
@@ -144,7 +144,7 @@ $.fn.puissance4 = function (x, y) {
                 $(".felin1").css("filter", "grayscale(1)");
                 open = true;
                 if (check()) {
-                    $("#victory").attr("src", "public/video/win" + playerOne + "-" + playerTwo + ".mp4")
+                    $("#victory").attr("src", "cet1bot.app/public/video/win" + playerOne + "-" + playerTwo + ".mp4")
                     document.getElementById('victory').play();
                     $('#victory').css("display", "block");
                     $('#victory').on('ended',function(){
@@ -158,7 +158,7 @@ $.fn.puissance4 = function (x, y) {
                 }
             }
         } else if (player == 2) {
-            $("img[x='" + play_x + "'][y='" + i + "']").attr("src", "public/images/Jeton" + playerTwo + ".png")
+            $("img[x='" + play_x + "'][y='" + i + "']").attr("src", "cet1bot.app/public/images/Jeton" + playerTwo + ".png")
             if (i == play_y) {
                 player = 1;
                 clearInterval(descente);
@@ -166,7 +166,7 @@ $.fn.puissance4 = function (x, y) {
                 $(".felin2").css("filter", "grayscale(1)");
                 open = true;
                 if (check()) {
-                    $("#victory").attr("src", "public/video/win" + playerTwo + "-" + playerOne + ".mp4")
+                    $("#victory").attr("src", "cet1bot.app/public/video/win" + playerTwo + "-" + playerOne + ".mp4")
                     document.getElementById('victory').play();
                     $('#victory').css("display", "block");
                     setTimeout(function(){
@@ -184,7 +184,7 @@ $.fn.puissance4 = function (x, y) {
     }
 
     tableau();
-    $(this).append('<video id="victory"><source src="" type="video/mp4">Ton navigateur est trop nul pour voir cette victoire</video><div id="menu"><h1>CHOOSE YOUR FIGHTER</h2><p>PLAYER ONE</p><img draggable="false" class="choice" src="public/images/Choose1.png" cbt="1"><img draggable="false" class="choice" src="public/images/Choose2.png" cbt="2"><img draggable="false" class="choice" src="public/images/Choose3.png" cbt="3"><img draggable="false" class="choice" src="public/images/Choose4.png" cbt="4"><img draggable="false" class="choice" src="public/images/Choose5.png" cbt="5"><img draggable="false" class="choice" src="public/images/Choose6.png" cbt="6"><img draggable="false" class="choice" src="public/images/Choose7.png" cbt="7"><img draggable="false" class="choice" src="public/images/Choose8.png" cbt="8"><div id="confirm">START J1</div></div>' + initialisation_visuel(map) + '<img class="felin1" src=""><img class="felin2" src="">');
+    $(this).append('<video id="victory"><source src="" type="video/mp4">Ton navigateur est trop nul pour voir cette victoire</video><div id="menu"><h1>CHOOSE YOUR FIGHTER</h2><p>PLAYER ONE</p><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose1.png" cbt="1"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose2.png" cbt="2"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose3.png" cbt="3"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose4.png" cbt="4"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose5.png" cbt="5"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose6.png" cbt="6"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose7.png" cbt="7"><img draggable="false" class="choice" src="cet1bot.app/public/images/Choose8.png" cbt="8"><div id="confirm">START J1</div></div>' + initialisation_visuel(map) + '<img class="felin1" src=""><img class="felin2" src="">');
     let PlayerChoice = 0;
     let selection = 0;
     let playerOne = 0;
@@ -206,13 +206,13 @@ $.fn.puissance4 = function (x, y) {
         if (PlayerChoice == 0) {
             selection = $(this).attr('cbt');
             playerOne = selection;
-            $('.felin1').attr("src", "public/images/main" + selection + ".png")
+            $('.felin1').attr("src", "cet1bot.app/public/images/main" + selection + ".png")
         }
 
         if (PlayerChoice == 1 && $(this).attr('cbt') != playerOne) {
             selection = $(this).attr('cbt');
             playerTwo = selection;
-            $('.felin2').attr("src", "public/images/main" + selection + ".png")
+            $('.felin2').attr("src", "cet1bot.app/public/images/main" + selection + ".png")
         }
     })
     $("#confirm").click(function () {
@@ -234,7 +234,7 @@ $.fn.puissance4 = function (x, y) {
             open = true;
         }
         if (PlayerChoice == 2) {
-            $("img[function='play']").attr("src", "public/images/vide.png");
+            $("img[function='play']").attr("src", "cet1bot.app/public/images/vide.png");
             $(".felin1").css("filter", "grayscale(0)");
             $(".felin2").css("filter", "grayscale(1)");
             tableau();
