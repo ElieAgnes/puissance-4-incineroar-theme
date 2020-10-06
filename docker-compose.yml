@@ -1,8 +1,8 @@
 version: "2"
 
 services:
-  cet1bot-app-back:
-    container_name: cet1bot-app-back
+  puissance4-incineroar-theme:
+    container_name: puissance4-incineroar-theme
     image: node:10-alpine
     user: "node"
     working_dir: /home/node/app
@@ -12,12 +12,12 @@ services:
     volumes:
       - ".:/home/node/app"
     labels:
-      - "traefik.http.routers.cet1bot-app-back.rule=Host(`puissance4.cet1bot.app`)"
-      - traefik.http.services.cet1bot-app-back.loadbalancer.server.port=8080
-      - traefik.http.routers.cet1bot-app-back.middlewares=https-redirectscheme
-      - "traefik.http.routers.cet1bot-app-back-secure.rule=Host(`puissance4.cet1bot.app`)"
-      - traefik.http.routers.cet1bot-app-back-secure.tls=true
-      - traefik.http.routers.cet1bot-app-back-secure.tls.certresolver=sslresolver
+      - "traefik.http.routers.puissance4-incineroar-theme.rule=Host(`puissance4.cet1bot.app`)"
+      - traefik.http.services.puissance4-incineroar-theme.loadbalancer.server.port=8080
+      - traefik.http.routers.puissance4-incineroar-theme.middlewares=https-redirectscheme
+      - "traefik.http.routers.puissance4-incineroar-theme-secure.rule=Host(`puissance4.cet1bot.app`)"
+      - traefik.http.routers.puissance4-incineroar-theme-secure.tls=true
+      - traefik.http.routers.puissance4-incineroar-theme-secure.tls.certresolver=sslresolver
     networks:
       - backend
 
